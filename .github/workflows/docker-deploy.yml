@@ -27,4 +27,10 @@ jobs:
         with: 
           push: true 
           tags: ${{ secrets.DOCKER_REPO }}:latest 
+
+      - name: Run tests
+        run: |
+          docker run --rm ${{ secrets.DOCKER_REPO }}:latest pytest tests/
+
+
  
